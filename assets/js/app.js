@@ -76,7 +76,7 @@
     h += '<button class="btn btn-ghost btn-sm" data-act="restart" type="button">↺ 重新開始</button>';
     if (isResult) {
       h += '<button class="btn btn-green btn-sm" data-act="print" type="button">🖨 列印／存成 PDF</button>';
-      h += '<a class="btn btn-primary btn-sm" href="#contact">需要有人幫手？聯絡宇見顧問</a>';
+      h += '<a class="btn btn-primary btn-sm" href="contact.html">需要有人幫手？聯絡宇見顧問</a>';
     }
     h += '</div>';
     return h;
@@ -133,9 +133,9 @@
     }
 
     if (node.showHelp) {
-      h += '<div class="note"><b>仍未解決？</b>請往下捲動至「<a href="#help">求助途徑</a>」一節，' +
+      h += '<div class="note"><b>仍未解決？</b>請前往「<a href="help.html">求助途徑</a>」一頁，' +
         '當中列出聯合處理中心、專業檢測、必要仲裁三條路，以及可以陪你走完全程的' +
-        '<a href="#contact">宇見顧問有限公司</a>。</div>';
+        '<a href="contact.html">宇見顧問有限公司</a>。</div>';
     }
 
     h += '<div class="report"><h4>📋 你的自檢記錄（可複製後直接貼入電郵或 WhatsApp）</h4>' +
@@ -237,21 +237,23 @@
 
   /* ---------- 啟動 ---------- */
   document.addEventListener('DOMContentLoaded', function () {
-    shell = document.getElementById('quiz');
+    var y = document.getElementById('year');
+    if (y) y.textContent = new Date().getFullYear();
+
+    renderHelp();
+    renderChecklist();
+
+    shell = document.getElementById('quizShell');
     body = document.getElementById('quizBody');
     pills = document.getElementById('stagePills');
     bar = document.getElementById('progressBar');
     crumbs = document.getElementById('crumbs');
+    if (!shell || !body || !pills || !bar || !crumbs) return;   // 此頁沒有自檢工具
 
     pills.innerHTML = STAGES.map(function (s, i) {
       return '<span class="pill' + (i === 0 ? ' on' : '') + '">' + s + '</span>';
     }).join('');
 
-    renderHelp();
-    renderChecklist();
     render(D.start);
-
-    var y = document.getElementById('year');
-    if (y) y.textContent = new Date().getFullYear();
   });
 })();
