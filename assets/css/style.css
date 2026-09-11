@@ -362,3 +362,11 @@ footer .fgrid{display:grid;grid-template-columns:1.4fr .6fr;gap:24px}
   .source-strip{padding:14px 16px;gap:12px}
   .pn.next{text-align:left}
 }
+
+/* ---------- 圖片來源標註 ---------- */
+.imgsrc{
+  font-size:.74rem;line-height:1.55;color:var(--ink-soft);opacity:.85;
+  margin:6px 0 0;letter-spacing:.2px;
+}
+td .imgsrc{margin-top:5px;max-width:190px}
+.card .imgsrc{margin-bottom:0}

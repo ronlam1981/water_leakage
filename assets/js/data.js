@@ -431,7 +431,7 @@ window.LEAK_DATA = (function () {
       title: '合資格實體 · 專業現場滲漏檢測',
       body: '對於難以確定源頭的個案，可委託合資格實體以無破損方式進行檢測：目測、微波探濕、紅外線成像測溫、色粉測試，以及 Leak Seeker 滲漏尋檢儀、膨脹氣球不漏試驗、地台盛水測試、坡度及流向檢測、流量檢測、裂縫寬度檢測、溫濕組合計、內窺鏡檢測、喉管壓力不漏測試等。',
       lines: [
-        { k: '合資格實體名單（土地工務局）', v: 'dsscu.gov.mo · publicInfo/id/389', href: 'https://www.dsscu.gov.mo/zh_HANT/home/publicInfo/id/389' }
+        { k: '土地工務局 · 提供滲漏水檢測報告服務的合資格實體名單', v: 'dsscu.gov.mo/zh/publicinfo/node-389', href: 'https://www.dsscu.gov.mo/zh/publicinfo/node-389' }
       ],
       foot: '第 9/2023 號法律已明確規範具資格簽發滲漏水檢測報告的合資格實體。'
     },
