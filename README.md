@@ -80,6 +80,17 @@ assets/
 > 根目錄的 `.html` 是**產生出來的檔案**。修改內容請改 `content/` 內的片段（或 `tools/build_pages.py` 的頁首頁尾），
 > 然後執行 `python3 tools/build_pages.py` 重新產生，再一併提交。
 
+## 匯出全部文字供校訂
+
+```bash
+python3 tools/export_text.py                                    # → build/網頁全部文字內容.md
+npm install docx && node tools/md2docx.js \
+  build/網頁全部文字內容.md build/網頁全部文字內容.docx           # → 同一份的 Word 版
+```
+
+匯出的文檔把各頁面文字與互動自檢的每一個節點逐段列出，並標明來源檔案與段落種類，
+最前面附字數概覽，方便決定從哪裡精簡。`build/` 為產生出來的檔案，不納入版本控制。
+
 ## 本地預覽
 
 ```bash
