@@ -116,15 +116,27 @@ h2{font-size:1.62rem;color:var(--deep-navy)}
 /* ---------- 需要進一步協助 ---------- */
 .help{background:var(--mist);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
 .routes{margin:26px 0 0;padding:0;list-style:none}
-.routes li{padding:22px 0;border-top:1px solid var(--hair)}
+.routes > li{padding:22px 0;border-top:1px solid var(--hair)}
 .routes h4{margin:0 0 .35em;font-size:1.06rem;color:var(--deep-navy);font-weight:700}
 .routes p{margin:0 0 .6em;color:var(--ink-soft)}
 .routes .hot{font-family:var(--en);font-weight:600;color:var(--ink);letter-spacing:.03em}
 
+/* 官方小冊子 */
+.booklets{margin-top:18px;padding-left:16px;border-left:2px solid var(--clear-sky)}
+.bk-title{display:inline-block;font-weight:600;font-size:.94rem;margin-bottom:6px}
+.booklets ul{margin:0;padding-left:1.1em;list-style:disc;color:var(--vision-mid)}
+.booklets li{margin:0 0 .25em;padding:0;border:none}
+.booklets li a{font-size:.94rem;font-weight:500;display:inline-flex;align-items:baseline;gap:7px}
+.pdf{
+  font-family:var(--en);font-size:.66rem;font-weight:600;letter-spacing:.08em;
+  color:var(--vision-mid);border:1px solid var(--vision-mid);
+  border-radius:2px;padding:0 4px;line-height:1.5;
+}
+
 /* ---------- 宇見顧問 ---------- */
 .uv{background:#fff;border:1px solid var(--hair);border-top:3px solid var(--uv-blue);
     border-radius:4px;padding:32px 30px;margin-top:38px}
-.uv .logo{width:300px;max-width:88%;margin:0 0 24px}
+.uv .logo{width:288px;max-width:88%;height:auto;margin:0 0 22px}
 .uv h3{font-size:1.28rem;color:var(--deep-navy);margin-bottom:.15em}
 /* 標誌已載明三語名稱，標題只供螢幕閱讀器與搜尋引擎使用 */
 .sr-title{position:absolute;width:1px;height:1px;margin:-1px;padding:0;
@@ -196,7 +208,7 @@ footer a{color:#BFD4EA}
   section{padding:42px 0}
   h2{font-size:1.4rem}
   .uv{padding:26px 22px}
-  .uv .logo{width:230px;margin-bottom:20px}
+  .uv .logo{width:250px;margin-bottom:18px}
   .contact dt{flex:0 0 100%}
   .contact div{gap:6px;padding:11px 0;border-bottom:1px solid var(--hair)}
   .contact div:last-child{border-bottom:none}
