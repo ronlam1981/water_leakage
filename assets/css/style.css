@@ -1,198 +1,206 @@
 /* ===========================================================
-   澳門樓宇滲漏水簡易自查 — 樣式表（單頁精簡版）
+   澳門樓宇滲漏水簡易自查
+   視覺依據：宇見顧問有限公司《品牌手冊》v1.0（2026.08.03）
    =========================================================== */
 
 :root{
-  --blue-900:#0d4f6c;
-  --blue-700:#1b7fa8;
-  --blue-500:#4fbee8;
-  --blue-300:#9fdcf4;
-  --blue-50:#eef8fd;
-  --green-600:#5f9a1c;
-  --green-500:#8dc63f;
-  --green-50:#f3f9e7;
-  --amber:#d99418;
-  --amber-50:#fdf5e6;
-  --coral:#d9705c;
-  --coral-50:#fdefec;
-  --ink:#1d3038;
-  --ink-soft:#546a74;
-  --line:#dbe8ee;
-  --bg:#f7fbfc;
-  --shadow:0 4px 16px rgba(13,79,108,.07);
-  --wrap:760px;
+  /* 02 / VISUAL IDENTITY — 指定色票 */
+  --uv-blue:#385890;      /* U VISION BLUE　主色 */
+  --deep-navy:#183C70;    /* DEEP NAVY　標題、深底 */
+  --vision-mid:#6F8FB8;   /* VISION MID　輔助、圖表 */
+  --clear-sky:#DCE8F4;    /* CLEAR SKY　底色、分隔 */
+  --ink:#243447;          /* INK　正文、資訊 */
+  --mist:#F2F6FA;         /* MIST　大面積淺底 */
+  --warm-white:#F5F3EF;   /* WARM WHITE　柔和對比 */
+  --hair:#D6E0EC;         /* 由 CLEAR SKY 派生的細線 */
+  --ink-soft:#5A6B7D;     /* 由 INK 派生的次級文字 */
+
+  --zh:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+  --en:"Montserrat","Aptos",Arial,sans-serif;
+
+  --measure:720px;   /* 正文欄寬，維持寬邊界與單一主軸 */
 }
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
   margin:0;
-  background:var(--bg);
+  background:#fff;
   color:var(--ink);
-  font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei","Hiragino Sans TC",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-family:var(--zh);
   font-size:17px;
-  line-height:1.9;
+  line-height:1.62;          /* 手冊：長文行距 1.45–1.65 */
   -webkit-text-size-adjust:100%;
 }
-h1,h2,h3{line-height:1.45;margin:0 0 .5em;text-wrap:balance}
-p{margin:0 0 1em}
-a{color:var(--blue-700)}
 img{max-width:100%;display:block}
+a{color:var(--uv-blue)}
+a:hover{color:var(--deep-navy)}
+h1,h2,h3{font-weight:700;line-height:1.35;margin:0 0 .5em;text-wrap:balance}
+p{margin:0 0 1.05em}
+:focus-visible{outline:2px solid var(--uv-blue);outline-offset:3px}
 
-.wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
+.wrap{max-width:var(--measure);margin:0 auto;padding:0 28px}
 
-/* ---------- 頂欄 ---------- */
+/* ---------- 頁首 ---------- */
 .topbar{
   position:sticky;top:0;z-index:40;
-  background:rgba(255,255,255,.95);
+  background:rgba(255,255,255,.96);
   backdrop-filter:saturate(180%) blur(8px);
-  border-bottom:1px solid var(--line);
+  border-bottom:1px solid var(--hair);
 }
-.topbar .wrap{display:flex;align-items:center;gap:12px;min-height:58px}
-.brand{
-  display:flex;align-items:center;gap:8px;text-decoration:none;
-  font-weight:800;color:var(--blue-900);font-size:1rem;
-}
-.brand svg{width:24px;height:24px;flex:0 0 24px}
-.topbar .btn{margin-left:auto}
+.topbar .wrap{display:flex;align-items:center;gap:14px;min-height:62px}
+.mark{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--deep-navy)}
+.mark img{width:30px;height:auto}
+.mark span{font-weight:600;font-size:.96rem;letter-spacing:.2px}
+.topbar .action{margin-left:auto}
 
-/* ---------- 按鈕 ---------- */
+/* ---------- 按鈕與連結 ---------- */
 .btn{
-  display:inline-flex;align-items:center;gap:8px;
-  text-decoration:none;font:inherit;font-weight:700;border:none;cursor:pointer;
-  padding:13px 24px;border-radius:999px;transition:.16s;line-height:1.4;
+  display:inline-flex;align-items:center;gap:9px;
+  font:inherit;font-weight:600;text-decoration:none;border:none;cursor:pointer;
+  padding:13px 26px;border-radius:4px;transition:background .16s,color .16s;
 }
-.btn-primary{background:var(--blue-700);color:#fff}
-.btn-primary:hover{background:var(--blue-900)}
-.btn-wa{background:var(--green-600);color:#fff}
-.btn-wa:hover{background:#4e8115}
-.btn-ghost{background:#fff;color:var(--blue-900);box-shadow:inset 0 0 0 2px var(--blue-300)}
-.btn-ghost:hover{background:var(--blue-50)}
-.btn-sm{padding:9px 17px;font-size:.9rem}
+.btn-primary{background:var(--uv-blue);color:#fff}
+.btn-primary:hover{background:var(--deep-navy);color:#fff}
+.btn-outline{background:transparent;color:var(--uv-blue);box-shadow:inset 0 0 0 1px var(--vision-mid)}
+.btn-outline:hover{background:var(--clear-sky);color:var(--deep-navy)}
+.btn-sm{padding:9px 18px;font-size:.9rem}
+.btn img{width:18px;height:18px}
 
-/* ---------- Hero ---------- */
-.hero{
-  background:linear-gradient(170deg,#eaf7fd 0%,var(--bg) 70%);
-  border-bottom:1px solid var(--line);
-  padding:46px 0 40px;
+.arrow{
+  display:inline-flex;align-items:center;gap:7px;
+  font-weight:600;text-decoration:none;
 }
-.eyebrow{
-  display:inline-block;background:var(--blue-500);color:#fff;
-  font-size:.78rem;font-weight:700;letter-spacing:2px;
-  padding:4px 13px;border-radius:999px;margin-bottom:16px;
-}
-.hero h1{font-size:2rem;color:var(--blue-900)}
-.hero .lead{font-size:1.06rem;color:var(--ink-soft);margin-bottom:20px}
+.arrow::after{content:"→";font-family:var(--en);transition:transform .16s}
+.arrow:hover::after{transform:translateX(3px)}
 
-/* ---------- 區塊 ---------- */
-section{padding:44px 0}
-section + section{border-top:1px solid var(--line)}
-.part{
-  font-size:.78rem;font-weight:800;letter-spacing:2px;color:var(--blue-700);
-  margin-bottom:8px;
+/* ---------- 首屏 ---------- */
+.hero{padding:52px 0 46px;background:var(--mist);border-bottom:1px solid var(--hair)}
+.hero h1{font-size:2.15rem;color:var(--deep-navy);margin-bottom:.4em}
+.hero .lead{font-size:1.12rem;color:var(--ink-soft);max-width:30em;margin-bottom:26px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+
+/* ---------- 區段 ---------- */
+section{padding:56px 0}
+.sec-label{
+  font-family:var(--en);font-size:.74rem;font-weight:600;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--vision-mid);margin-bottom:10px;
 }
-h2{font-size:1.45rem;color:var(--blue-900)}
-.step-no{
-  display:inline-grid;place-items:center;
-  width:30px;height:30px;border-radius:9px;
-  background:var(--blue-700);color:#fff;font-size:1rem;font-weight:800;
-  margin-right:10px;vertical-align:-5px;
+h2{font-size:1.62rem;color:var(--deep-navy)}
+.sec-lead{color:var(--ink-soft);max-width:36em;margin-bottom:8px}
+
+/* ---------- 3 分鐘初步自診 ---------- */
+.cases{margin-top:34px}
+.case{padding-top:30px;border-top:1px solid var(--hair)}
+.case:first-child{border-top:none;padding-top:0}
+.case-no{
+  font-family:var(--en);font-size:.95rem;font-weight:600;letter-spacing:.14em;
+  color:var(--vision-mid);display:block;margin-bottom:4px;
+}
+.case h3{font-size:1.2rem;color:var(--deep-navy)}
+.field{margin:0 0 14px}
+.field .k{
+  display:block;font-size:.78rem;font-weight:600;letter-spacing:.1em;
+  color:var(--vision-mid);margin-bottom:2px;
+}
+.method{
+  background:var(--clear-sky);border-radius:4px;
+  padding:18px 20px;margin:0 0 30px;
+}
+.method .k{color:var(--uv-blue)}
+.method p{margin:0}
+.method .caveat{
+  display:block;margin-top:10px;font-size:.88rem;color:var(--ink-soft);
 }
 
-/* ---------- 提示 ---------- */
-.note{
-  background:var(--amber-50);border-left:4px solid var(--amber);
-  border-radius:10px;padding:14px 17px;margin:0 0 22px;
-  font-size:.94rem;line-height:1.8;color:var(--ink-soft);
-}
-.note.plain{background:var(--blue-50);border-left-color:var(--blue-500)}
-.note b{color:var(--ink)}
+/* ---------- 需要進一步協助 ---------- */
+.help{background:var(--mist);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+.routes{margin:26px 0 0;padding:0;list-style:none}
+.routes li{padding:22px 0;border-top:1px solid var(--hair)}
+.routes h4{margin:0 0 .35em;font-size:1.06rem;color:var(--deep-navy);font-weight:700}
+.routes p{margin:0 0 .6em;color:var(--ink-soft)}
+.routes .hot{font-family:var(--en);font-weight:600;color:var(--ink);letter-spacing:.03em}
 
-/* ---------- 第一步：時間線索 ---------- */
-.clues{display:grid;gap:12px;margin:0 0 8px;padding:0;list-style:none}
-.clue{
-  background:#fff;border:1px solid var(--line);border-radius:14px;
-  padding:16px 18px;box-shadow:var(--shadow);
-}
-.clue .when{display:block;font-weight:800;color:var(--blue-900);margin-bottom:3px}
-.clue .why{display:block;font-size:.95rem;color:var(--ink-soft)}
+/* ---------- 宇見顧問 ---------- */
+.uv{background:#fff;border:1px solid var(--hair);border-top:3px solid var(--uv-blue);
+    border-radius:4px;padding:32px 30px;margin-top:38px}
+.uv .logo{width:300px;max-width:88%;margin:0 0 24px}
+.uv h3{font-size:1.28rem;color:var(--deep-navy);margin-bottom:.15em}
+/* 標誌已載明三語名稱，標題只供螢幕閱讀器與搜尋引擎使用 */
+.sr-title{position:absolute;width:1px;height:1px;margin:-1px;padding:0;
+  overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.uv .en{font-family:var(--en);font-size:.9rem;font-weight:500;color:var(--vision-mid);
+        letter-spacing:.06em;margin:0 0 1em}
+.uv ul{margin:0 0 26px;padding-left:1.15em;color:var(--ink-soft)}
+.uv ul li{margin-bottom:.3em}
+.uv .cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-bottom:28px}
 
-/* ---------- 第二步：三個自測 ---------- */
-.tests{counter-reset:t;list-style:none;padding:0;margin:0 0 22px;display:grid;gap:16px}
-.tests li{
-  counter-increment:t;position:relative;
-  background:#fff;border:1px solid var(--line);border-radius:16px;
-  padding:20px 22px 18px 62px;box-shadow:var(--shadow);
+.contact{margin:0;border-top:1px solid var(--hair);padding-top:22px}
+.contact div{display:flex;gap:16px;padding:9px 0;align-items:flex-start;flex-wrap:wrap}
+.contact dt{
+  flex:0 0 156px;display:flex;align-items:center;gap:8px;
+  font-size:.84rem;color:var(--ink-soft);line-height:1.5;padding-top:2px;
 }
-.tests li::before{
-  content:counter(t);position:absolute;left:20px;top:20px;
-  width:30px;height:30px;border-radius:50%;
-  background:var(--green-500);color:#fff;
-  display:grid;place-items:center;font-weight:800;font-size:.95rem;
-}
-.tests h3{font-size:1.08rem;color:var(--blue-900);margin-bottom:.4em}
-.tests p{margin-bottom:.6em}
-.tests p:last-child{margin-bottom:0}
-.tests .result{font-size:.95rem;color:var(--ink-soft)}
+.contact dt img{width:17px;height:17px;flex:0 0 17px}
+.contact dd{margin:0;flex:1 1 220px;min-width:0;overflow-wrap:anywhere;font-weight:500}
+.contact dd small{display:block;font-size:.82rem;color:var(--ink-soft);font-weight:400}
 
-/* ---------- 第三步：三種結果 ---------- */
-.outcomes{display:grid;gap:14px;margin-bottom:22px}
-.outcome{
-  background:#fff;border:1px solid var(--line);border-left:5px solid var(--blue-500);
-  border-radius:14px;padding:18px 20px;box-shadow:var(--shadow);
+/* ---------- 品牌標語 ---------- */
+.tagline{background:var(--warm-white);text-align:center;padding:64px 0 56px}
+.tagline p{
+  font-size:1.5rem;line-height:1.55;font-weight:500;color:var(--deep-navy);
+  margin:0;letter-spacing:.02em;
 }
-.outcome.ok{border-left-color:var(--green-500)}
-.outcome.unsure{border-left-color:var(--amber)}
-.outcome.stuck{border-left-color:var(--coral)}
-.outcome h3{font-size:1.05rem;color:var(--blue-900);margin-bottom:.35em}
-.outcome p{margin:0;font-size:.96rem;color:var(--ink-soft)}
+.tagline .en{
+  font-family:var(--en);font-size:.9rem;font-weight:400;color:var(--vision-mid);
+  letter-spacing:.06em;margin-top:14px;
+}
 
-/* ---------- 第二部分：求助 ---------- */
-.help{background:#fff}
-.hcard{
-  border:1px solid var(--line);border-radius:16px;
-  padding:22px 24px;margin-bottom:18px;box-shadow:var(--shadow);
-}
-.hcard.uv{background:linear-gradient(170deg,#f5fbea,#fff);border-color:var(--green-500)}
-.hcard h3{font-size:1.15rem;color:var(--blue-900);margin-bottom:.2em}
-.hcard .fit{font-size:.92rem;color:var(--ink-soft);margin-bottom:.9em}
-.hcard .fit b{color:var(--blue-700)}
-.dl{list-style:none;padding:0;margin:0 0 16px;display:grid;gap:7px;font-size:.96rem}
-.dl li{display:flex;gap:10px;flex-wrap:wrap}
-.dl .k{flex:0 0 74px;color:var(--ink-soft);font-size:.88rem}
-.dl .v{flex:1 1 auto;min-width:0;word-break:break-word;font-weight:600}
-.hcard ul.plain{margin:0 0 16px;padding-left:1.25em;font-size:.96rem;color:var(--ink-soft)}
-.hcard ul.plain li{margin-bottom:.35em}
-.hcard .note{margin-top:16px;margin-bottom:0}
+/* 水波曲線：只用於分隔與頁底，三條、線寬一致 */
+.waves{display:block;width:100%;height:46px;background:var(--warm-white);
+  color:var(--vision-mid);opacity:.85}
 
 /* ---------- 頁尾 ---------- */
-footer{background:#0d3d53;color:rgba(255,255,255,.78);padding:30px 0;font-size:.88rem}
-footer p{margin:0 0 .7em}
-footer p:last-child{margin-bottom:0}
-footer b{color:#fff}
-footer a{color:var(--blue-300)}
+footer{background:var(--deep-navy);color:rgba(255,255,255,.76);padding:44px 0 38px;font-size:.88rem}
+footer .disclaimer{max-width:40em;margin-bottom:26px;line-height:1.7}
+footer .names{color:#fff;font-weight:600;margin-bottom:2px}
+footer .names .pt,footer .names .en{
+  display:block;font-family:var(--en);font-size:.8rem;font-weight:500;
+  color:rgba(255,255,255,.7);letter-spacing:.05em;
+}
+footer .line{margin-top:14px;font-size:.84rem}
+footer a{color:#BFD4EA}
 
 /* ---------- 浮動 WhatsApp ---------- */
 .fab{
-  position:fixed;right:16px;bottom:16px;z-index:50;
-  width:54px;height:54px;border-radius:50%;
-  background:#25d366;color:#fff;
-  display:grid;place-items:center;text-decoration:none;
-  box-shadow:0 8px 24px rgba(0,0,0,.2);
+  position:fixed;right:18px;bottom:18px;z-index:50;
+  display:flex;align-items:center;gap:9px;
+  background:var(--uv-blue);color:#fff;text-decoration:none;
+  padding:12px 18px;border-radius:4px;font-weight:600;font-size:.92rem;
+  box-shadow:0 6px 20px rgba(24,60,112,.28);
 }
-.fab svg{width:28px;height:28px}
+.fab:hover{background:var(--deep-navy);color:#fff}
+.fab img{width:19px;height:19px}
 
-@media print{.topbar,.fab{display:none!important}body{background:#fff}}
+@media print{
+  .topbar,.fab,.hero-actions,.uv .cta{display:none!important}
+  body{font-size:11pt}
+}
 
 @media (max-width:640px){
   body{font-size:16px}
-  .hero{padding:34px 0 30px}
-  .hero h1{font-size:1.6rem}
-  section{padding:34px 0}
-  .wrap{padding:0 16px}
-  .tests li{padding:18px 18px 16px 56px}
-  .tests li::before{left:16px;top:18px}
-  .dl .k{flex:0 0 100%}
-  .fab{width:48px;height:48px}
-  .fab svg{width:25px;height:25px}
+  .wrap{padding:0 20px}
+  .hero{padding:38px 0 34px}
+  .hero h1{font-size:1.72rem}
+  .hero .lead{font-size:1.02rem}
+  section{padding:42px 0}
+  h2{font-size:1.4rem}
+  .uv{padding:26px 22px}
+  .uv .logo{width:230px;margin-bottom:20px}
+  .contact dt{flex:0 0 100%}
+  .contact div{gap:6px;padding:11px 0;border-bottom:1px solid var(--hair)}
+  .contact div:last-child{border-bottom:none}
+  .tagline{padding:48px 0 42px}
+  .tagline p{font-size:1.24rem}
+  .fab{padding:11px 15px;font-size:.88rem}
 }
