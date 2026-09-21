@@ -103,6 +103,10 @@ h2{font-size:1.62rem;color:var(--deep-navy)}
   display:block;font-size:.78rem;font-weight:600;letter-spacing:.1em;
   color:var(--vision-mid);margin-bottom:2px;
 }
+/* 水路示意圖 */
+.dia{margin:0 0 18px;border-radius:4px;overflow:hidden}
+.dia img{width:100%;height:auto}
+
 .method{
   background:var(--clear-sky);border-radius:4px;
   padding:18px 20px;margin:0 0 30px;
@@ -120,6 +124,10 @@ h2{font-size:1.62rem;color:var(--deep-navy)}
 .routes h4{margin:0 0 .35em;font-size:1.06rem;color:var(--deep-navy);font-weight:700}
 .routes p{margin:0 0 .6em;color:var(--ink-soft)}
 .routes .hot{font-family:var(--en);font-weight:600;color:var(--ink);letter-spacing:.03em}
+
+/* 三條路共用的「適合：」句 */
+.fit{font-size:.95rem;color:var(--ink-soft);margin:0 0 .7em}
+.fit b{color:var(--uv-blue);font-weight:700}
 
 /* 官方小冊子 */
 .booklets{margin-top:18px;padding-left:16px;border-left:2px solid var(--clear-sky)}
@@ -141,8 +149,7 @@ h2{font-size:1.62rem;color:var(--deep-navy)}
 /* 標誌已載明三語名稱，標題只供螢幕閱讀器與搜尋引擎使用 */
 .sr-title{position:absolute;width:1px;height:1px;margin:-1px;padding:0;
   overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
-.uv .en{font-family:var(--en);font-size:.9rem;font-weight:500;color:var(--vision-mid);
-        letter-spacing:.06em;margin:0 0 1em}
+.uv .fit{margin-bottom:.9em}
 .uv ul{margin:0 0 26px;padding-left:1.15em;color:var(--ink-soft)}
 .uv ul li{margin-bottom:.3em}
 .uv .cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-bottom:28px}
@@ -215,4 +222,99 @@ footer a{color:#BFD4EA}
   .tagline{padding:48px 0 42px}
   .tagline p{font-size:1.24rem}
   .fab{padding:11px 15px;font-size:.88rem}
+}
+
+/* ===========================================================
+   落地頁（consult.html）
+   同一套品牌色票與字體；語氣較主動，層次對比較強。
+   =========================================================== */
+
+.lp .topbar .mark span{font-size:.94rem}
+
+/* 首屏：深藍 × 白（手冊指定用於高層級標題與重要聲明） */
+.lp-hero{
+  background:var(--deep-navy);color:#fff;
+  padding:62px 0 56px;
+}
+.lp-hero h1{
+  color:#fff;font-size:2.4rem;line-height:1.32;
+  letter-spacing:.5px;margin-bottom:.5em;
+}
+.lp-hero .lead{
+  font-size:1.1rem;color:rgba(255,255,255,.84);
+  max-width:32em;margin-bottom:30px;
+}
+.btn-lg{padding:17px 32px;font-size:1.06rem}
+.btn-wa{background:#25a55f;color:#fff}
+.btn-wa:hover{background:#1e8a4e;color:#fff}
+.lp-trust{
+  list-style:none;display:flex;gap:10px 22px;flex-wrap:wrap;
+  margin:26px 0 0;padding:0;font-size:.9rem;color:rgba(255,255,255,.72);
+}
+.lp-trust li{display:flex;align-items:center;gap:8px}
+.lp-trust li::before{
+  content:"";width:6px;height:6px;border-radius:50%;
+  background:var(--vision-mid);flex:0 0 6px;
+}
+
+/* 痛點 */
+.lp-pain{background:var(--mist);border-bottom:1px solid var(--hair)}
+.lp-list{list-style:none;padding:0;margin:30px 0 0;display:grid;gap:2px}
+.lp-list li{padding:20px 0;border-top:1px solid var(--hair)}
+.lp-list li:first-child{border-top:none;padding-top:6px}
+.lp-list h3{font-size:1.08rem;color:var(--deep-navy);margin-bottom:.3em}
+.lp-list p{margin:0;color:var(--ink-soft)}
+
+/* 我們點幫：四步 */
+.lp-steps{counter-reset:st;list-style:none;padding:0;margin:32px 0 0;display:grid;gap:20px}
+.lp-steps li{position:relative;padding-left:60px;counter-increment:st}
+.lp-steps li::before{
+  content:counter(st);position:absolute;left:0;top:-2px;
+  width:40px;height:40px;border-radius:4px;
+  background:var(--clear-sky);color:var(--uv-blue);
+  display:grid;place-items:center;
+  font-family:var(--en);font-size:1.05rem;font-weight:600;
+}
+.lp-steps h3{font-size:1.1rem;color:var(--deep-navy);margin-bottom:.25em}
+.lp-steps p{margin:0;color:var(--ink-soft)}
+
+/* 差異化 */
+.lp-why{background:var(--mist);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+.lp-why-grid{display:grid;gap:24px;margin-top:30px}
+.lp-why-grid > div{
+  background:#fff;border:1px solid var(--hair);border-left:3px solid var(--uv-blue);
+  border-radius:4px;padding:22px 24px;
+}
+.lp-why-grid h3{font-size:1.08rem;color:var(--deep-navy);margin-bottom:.3em}
+.lp-why-grid p{margin:0;color:var(--ink-soft)}
+
+/* 常見問題 */
+.lp-faq{background:var(--warm-white);border-top:1px solid var(--hair)}
+.lp-qa{margin:30px 0 0}
+.lp-qa dt{
+  font-weight:700;color:var(--deep-navy);font-size:1.05rem;
+  padding-top:22px;margin-top:22px;border-top:1px solid var(--hair);
+}
+.lp-qa dt:first-of-type{border-top:none;margin-top:0;padding-top:0}
+.lp-qa dd{margin:.5em 0 0;color:var(--ink-soft)}
+.lp-qa dd b{color:var(--ink)}
+
+/* 結尾 CTA */
+.lp-cta{background:#fff;border-top:1px solid var(--hair)}
+.lp .waves{background:#fff}
+.lp-cta .logo{width:300px;max-width:88%;height:auto;margin:0 0 26px}
+.lp-cta h2{font-size:1.55rem}
+.lp-cta > .wrap > p{color:var(--ink-soft);max-width:34em}
+.lp-cta-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin:26px 0 32px}
+.lp-cta .contact{border-top:1px solid var(--hair)}
+
+@media (max-width:640px){
+  .lp-hero{padding:44px 0 40px}
+  .lp-hero h1{font-size:1.82rem}
+  .lp-hero .lead{font-size:1.02rem}
+  .btn-lg{padding:15px 24px;font-size:1rem;width:100%;justify-content:center}
+  .lp-steps li{padding-left:52px}
+  .lp-steps li::before{width:36px;height:36px}
+  .lp-cta .logo{width:100%;max-width:280px;margin-bottom:22px}
+  .lp-cta-actions .btn-outline{width:100%;justify-content:center}
 }
