@@ -40,6 +40,7 @@ p{margin:0 0 1.05em}
 :focus-visible{outline:2px solid var(--uv-blue);outline-offset:3px}
 
 .wrap{max-width:var(--measure);margin:0 auto;padding:0 28px}
+[id]{scroll-margin-top:84px}
 
 /* ---------- 頁首 ---------- */
 .topbar{
@@ -125,6 +126,14 @@ h2{font-size:1.62rem;color:var(--deep-navy)}
 .routes p{margin:0 0 .6em;color:var(--ink-soft)}
 .routes .hot{font-family:var(--en);font-weight:600;color:var(--ink);letter-spacing:.03em}
 
+/* 官方渠道與專業協助之間的過場句 */
+.handoff{
+  background:var(--clear-sky);border-radius:4px;
+  margin:34px 0 0;padding:24px 26px;
+  text-align:center;font-size:1.14rem;font-weight:600;
+  color:var(--deep-navy);line-height:1.6;
+}
+
 /* 三條路共用的「適合：」句 */
 .fit{font-size:.95rem;color:var(--ink-soft);margin:0 0 .7em}
 .fit b{color:var(--uv-blue);font-weight:700}
@@ -143,7 +152,7 @@ h2{font-size:1.62rem;color:var(--deep-navy)}
 
 /* ---------- 宇見顧問 ---------- */
 .uv{background:#fff;border:1px solid var(--hair);border-top:3px solid var(--uv-blue);
-    border-radius:4px;padding:32px 30px;margin-top:38px}
+    border-radius:4px;padding:32px 30px;margin-top:18px}
 .uv .logo{width:320px;max-width:92%;height:auto;margin:0 0 22px}
 .uv h3{font-size:1.28rem;color:var(--deep-navy);margin-bottom:.15em}
 /* 標誌已載明三語名稱，標題只供螢幕閱讀器與搜尋引擎使用 */
@@ -219,6 +228,7 @@ footer a{color:#BFD4EA}
   .contact dt{flex:0 0 100%}
   .contact div{gap:6px;padding:11px 0;border-bottom:1px solid var(--hair)}
   .contact div:last-child{border-bottom:none}
+  .handoff{font-size:1.04rem;padding:20px 18px;margin-top:28px}
   .tagline{padding:48px 0 42px}
   .tagline p{font-size:1.24rem}
   .fab{padding:11px 15px;font-size:.88rem}
