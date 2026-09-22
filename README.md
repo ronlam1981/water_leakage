@@ -96,16 +96,20 @@ uvisionconsulting@gmail.com、Facebook `uvisionmacau`、Instagram 及 Threads `@
 
 ## 技術
 
-純靜態 HTML + CSS，**沒有 JavaScript、沒有框架、沒有追蹤程式、不收集任何資料**。
+純靜態 HTML + CSS，**沒有框架、沒有追蹤程式、不收集任何資料**。
+全站只有一段自寫的 JavaScript（`assets/js/copy.js`，約 40 行）：按「複製號碼」時把微信號碼寫入剪貼簿，
+不載入任何外部程式庫、不發送任何請求。
 
 ```
 index.html                      公益自查工具（直接編輯）
 consult.html                    落地頁（直接編輯）
 assets/css/style.css            樣式（品牌色票與字級定義於此）
+assets/js/copy.js               一按複製聯絡號碼（全站唯一 JavaScript）
 assets/img/uvision-logo-h.webp  橫式三語標誌（WebP，附 .png 後備）
 assets/img/uvision-symbol.png   符號標誌（頁首）
 assets/img/favicon.png          網站圖示
 assets/img/icons/*.svg          社交平台圖示（取自電子聯絡卡）
+assets/img/wechat-qr.webp       微信加好友二維碼（WebP，附 .png 後備）
 assets/img/diagram-1..3.svg     三張水路示意圖
 assets/img/flowchart-redraw.svg 自製流程圖（現時未使用，保留備用）
 tools/make_diagrams.py          產生水路示意圖
