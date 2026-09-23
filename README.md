@@ -25,7 +25,7 @@
 | 首屏 | 標題、導語、三個行動：開始 3 分鐘初步自診／政府官方渠道／搵專業人士協助（連往落地頁） |
 | 一、3 分鐘初步自診 | 三種出現特徵 × 可能源頭 × **水路示意圖** × 自測方法 |
 | 二、仍然解決唔到？你有三條路 | 三條路並列，各有一句「適合：」——聯合處理中心／必要仲裁／宇見顧問 |
-| 宇見顧問有限公司 | 服務範圍、WhatsApp 免費初步諮詢、完整聯絡資料、vCard 下載 |
+| 宇見顧問有限公司 | 服務範圍、一個主要出口「睇下宇見點樣幫你」（連往落地頁）、一行 WhatsApp 後備 |
 | 品牌口號 | 釐清問題　看清選項／See Clearly · Know Your Options |
 | 頁尾 | 免責聲明、三語公司名稱、聯絡資料 |
 
@@ -84,7 +84,11 @@
 
 以 **宇見顧問電子聯絡卡** 為準：電話／WhatsApp／微信 +853 6679 8555、
 uvisionconsulting@gmail.com、Facebook `uvisionmacau`、Instagram 及 Threads `@uvisionmacau`、
-澳門桔仔街 65 號一樓（到訪請提前預約）。頁內另附 vCard 一鍵儲存至通訊錄。
+澳門桔仔街 65 號一樓（到訪請提前預約）。
+
+**分工：** 完整聯絡清單、微信加好友二維碼及 vCard 只出現在落地頁 `consult.html`；
+公益版只保留一個連往落地頁的主要出口、一行 WhatsApp，以及頁尾一行（公司名、地址、電話、電郵），
+避免公共資訊頁變成聯絡卡。
 
 ## 內容與版權
 
@@ -98,14 +102,15 @@ uvisionconsulting@gmail.com、Facebook `uvisionmacau`、Instagram 及 Threads `@
 ## 技術
 
 純靜態 HTML + CSS，**沒有框架、沒有追蹤程式、不收集任何資料**。
-全站只有一段自寫的 JavaScript（`assets/js/copy.js`，約 40 行）：按「複製號碼」時把微信號碼寫入剪貼簿，
+全站只有一段自寫的 JavaScript（`assets/js/copy.js`，約 40 行，僅落地頁載入）：
+按「複製號碼」時把微信號碼寫入剪貼簿，
 不載入任何外部程式庫、不發送任何請求。
 
 ```
 index.html                      公益自查工具（直接編輯）
 consult.html                    落地頁（直接編輯）
 assets/css/style.css            樣式（品牌色票與字級定義於此）
-assets/js/copy.js               一按複製聯絡號碼（全站唯一 JavaScript）
+assets/js/copy.js               一按複製聯絡號碼（唯一 JavaScript，只在落地頁載入）
 assets/img/uvision-logo-h.webp  橫式三語標誌（WebP，附 .png 後備）
 assets/img/uvision-symbol.png   符號標誌（頁首）
 assets/img/favicon.png          網站圖示

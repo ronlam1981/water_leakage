@@ -161,7 +161,12 @@ h2{font-size:1.62rem;color:var(--deep-navy)}
 .uv .fit{margin-bottom:.9em}
 .uv ul{margin:0 0 26px;padding-left:1.15em;color:var(--ink-soft)}
 .uv ul li{margin-bottom:.3em}
-.uv .cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-bottom:28px}
+.uv .cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-bottom:0}
+/* 公益頁只留一個主要出口；完整聯絡方式集中在落地頁 */
+.uv-alt{margin:16px 0 0;font-size:.94rem;color:var(--ink-soft)}
+.uv-alt a{display:inline-flex;align-items:center;gap:7px;font-weight:600;text-decoration:none}
+.uv-alt a:hover{text-decoration:underline}
+.uv-alt a img{width:17px;height:17px;flex:0 0 17px}
 
 .contact{margin:0;border-top:1px solid var(--hair);padding-top:22px}
 .contact div{display:flex;gap:16px;padding:9px 0;align-items:flex-start;flex-wrap:wrap}
