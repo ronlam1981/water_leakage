@@ -198,8 +198,8 @@ h2{font-size:1.62rem;color:var(--deep-navy)}
 /* ---------- 品牌標語 ---------- */
 .tagline{background:var(--warm-white);text-align:center;padding:64px 0 56px}
 .tagline p{
-  font-size:1.5rem;line-height:1.55;font-weight:500;color:var(--deep-navy);
-  margin:0;letter-spacing:.02em;
+  font-size:1.72rem;line-height:1.5;font-weight:700;color:var(--deep-navy);
+  margin:0;letter-spacing:.04em;
 }
 .tagline .en{
   font-family:var(--en);font-size:.9rem;font-weight:400;color:var(--vision-mid);
@@ -334,7 +334,16 @@ footer a{color:#BFD4EA}
 /* 結尾 CTA */
 .lp-cta{background:#fff;border-top:1px solid var(--hair)}
 .lp .waves{background:#fff}
-.lp-cta .logo{width:300px;max-width:88%;height:auto;margin:0 0 26px}
+.lp-cta .logo{width:300px;max-width:88%;height:auto;margin:0 0 16px}
+.lp-cta .slogan{
+  margin:0 0 30px;font-size:1.08rem;font-weight:600;
+  color:var(--deep-navy);letter-spacing:.04em;
+}
+.lp-cta .slogan span{
+  display:block;margin-top:6px;
+  font-family:var(--en);font-size:.78rem;font-weight:400;
+  color:var(--vision-mid);letter-spacing:.07em;
+}
 .lp-cta h2{font-size:1.55rem}
 .lp-cta > .wrap > p{color:var(--ink-soft);max-width:34em}
 .lp-cta-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin:26px 0 32px}
@@ -347,6 +356,8 @@ footer a{color:#BFD4EA}
   .btn-lg{padding:15px 24px;font-size:1rem;width:100%;justify-content:center}
   .lp-steps li{padding-left:52px}
   .lp-steps li::before{width:36px;height:36px}
-  .lp-cta .logo{width:100%;max-width:280px;margin-bottom:22px}
+  .lp-cta .logo{width:100%;max-width:280px;margin-bottom:14px}
+  .lp-cta .slogan{font-size:1rem;margin-bottom:26px}
+  .tagline p{font-size:1.4rem}
   .lp-cta-actions .btn-outline{width:100%;justify-content:center}
 }
