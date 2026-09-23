@@ -1,9 +1,26 @@
-# 澳門樓宇滲漏水簡易自查
+# 澳門樓宇滲漏水簡易自查（已搬遷）
+
+> ## ⚠️ 本倉庫已停止更新
+>
+> 網站已於 2026-09-23 併入公司主域，**唯一的編輯來源**是
+> [`ronlam1981/uvision-macau`](https://github.com/ronlam1981/uvision-macau) 的 `public/leak/`。
+>
+> | 頁面 | 新網址 |
+> | --- | --- |
+> | 公益自查工具 | https://uvisionmacau.com/leak/ |
+> | 落地頁 | https://uvisionmacau.com/leak/consult.html |
+>
+> 本倉庫的 `index.html` 與 `consult.html` 已改為轉址頁（canonical ＋ meta refresh
+> 指向新網址），舊連結仍然可用。**請勿在此修改內容**——在兩邊各自改動必然走樣。
+>
+> 以下內容為搬遷前的紀錄，保留作歷史與設計依據。
+
+---
 
 一個單頁、純靜態的公益網站：天花滴水、牆身發霉？先看出現特徵，再配合簡單自測，
 快速縮窄滲漏源頭；仍未解決時，指引官方支援、必要仲裁及宇見顧問的協助途徑。
 
-🔗 **網站：** https://ronlam1981.github.io/water_leakage/
+🔗 **原網址（現已轉址）：** https://ronlam1981.github.io/water_leakage/
 
 ---
 
