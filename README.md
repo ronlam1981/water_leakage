@@ -90,6 +90,20 @@ uvisionconsulting@gmail.com、Facebook `uvisionmacau`、Instagram 及 Threads `@
 公益版只保留一個連往落地頁的主要出口、一行 WhatsApp，以及頁尾一行（公司名、地址、電話、電郵），
 避免公共資訊頁變成聯絡卡。
 
+## 搜尋引擎
+
+兩頁都可被收錄，**沒有使用 `noindex`**：兩頁針對不同搜尋意圖——
+公益版是資訊型（「滲漏水點自己查」），落地頁是求助型（「樓上唔認點算」），
+內容重疊低，且落地頁是官網連入的目標，封鎖它等於浪費那些連結。
+
+- 兩頁各有自我指向的 `<link rel="canonical">` 與 `og:url`，
+  令 `?v=2` 之類的快取參數網址不會分散排名訊號。
+- `sitemap.xml` 列出兩條網址，需在 Google Search Console 手動提交
+  （`robots.txt` 只在網域根目錄生效，專案倉庫放不了，
+  而預設無 `robots.txt` 即全站可爬，正是本站想要的結果）。
+- 日後若判斷兩頁互搶排名，應先看 Search Console 數據再調整標題與內部連結，
+  而不是加上不可逆的 `noindex`。
+
 ## 內容與版權
 
 - 網站文字採用精簡版文案，內容參考澳門特區政府公開資料整理，並以連結指回官方網頁。
@@ -121,6 +135,7 @@ assets/img/flowchart-redraw.svg 自製流程圖（現時未使用，保留備用
 tools/make_diagrams.py          產生水路示意圖
 tools/make_flowchart.py         產生上述流程圖
 docs/圖片替換清單.md             舊版圖片資料（現時未使用，保留備用）
+sitemap.xml                     兩條網址的網站地圖（在 Search Console 手動提交）
 .github/workflows/pages.yml     推送即自動部署到 GitHub Pages
 ```
 
